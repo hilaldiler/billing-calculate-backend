@@ -1,4 +1,4 @@
-package com.billing.calculator.demo.controller.product;
+package com.billing.calculator.demo.controller;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
