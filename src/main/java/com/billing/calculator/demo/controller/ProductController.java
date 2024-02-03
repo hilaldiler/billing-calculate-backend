@@ -22,7 +22,6 @@ import java.util.List;
 @RestController
 public class ProductController {
 	
-	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/getProduct")
 	public ResponseEntity<Product> getProduct(@RequestParam MultipartFile file, @RequestParam String productCode, @RequestParam String customerType) throws IOException {
 		try (InputStream inputStream = file.getInputStream()) {
@@ -36,7 +35,6 @@ public class ProductController {
 		}
 	}
 
-	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/searchProduct")
 	public ResponseEntity<List<Product>> searchProduct(@RequestParam MultipartFile file, @RequestParam String filteredProductName, @RequestParam String customerType) throws IOException {
 		try (InputStream inputStream = file.getInputStream()) {

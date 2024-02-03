@@ -18,7 +18,6 @@ import com.billing.calculator.demo.request.BillingRequest;
 @RestController
 public class CalculateController {
 
-	@CrossOrigin(origins = "https://sern-42b245bde1b3.herokuapp.com/")
 	@PostMapping("/calculateBilling")
 	public ResponseEntity<Billing> calculateBilling(@RequestBody BillingRequest request) throws IOException {
 		try{
