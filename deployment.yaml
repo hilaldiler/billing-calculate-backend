@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: billing-calculate
+  name: billing-calculate-backend
 spec:
   selector:
     matchLabels:
-      app: billing-calculate
+      app: billing-calculate-backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: billing-calculate
+        app: billing-calculate-backend
     spec:
       containers:
         - name: sern-offers
