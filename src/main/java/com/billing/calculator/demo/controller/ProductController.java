@@ -21,7 +21,6 @@ import java.util.Iterator;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 public class ProductController {
 	
 	@PostMapping("/getProduct")

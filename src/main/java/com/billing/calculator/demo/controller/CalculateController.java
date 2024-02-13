@@ -17,7 +17,6 @@ import com.billing.calculator.demo.model.Product;
 import com.billing.calculator.demo.request.BillingRequest;
 
 @RestController
-@RequestMapping("/api")
 public class CalculateController {
 
 	@PostMapping("/calculateBilling")
