@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 @CrossOrigin(origins = "https://sernteklifal.vercel.app")
 public class ProductController {
 	
