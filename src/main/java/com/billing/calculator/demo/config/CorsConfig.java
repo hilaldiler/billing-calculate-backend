@@ -14,9 +14,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://sernteklifal.vercel.app/api")
+                        .allowedOrigins("*")
                         .allowedMethods("GET", "POST")
-                        .allowCredentials(true);
+                        .allowCredentials(false);
             }
         };
     }
