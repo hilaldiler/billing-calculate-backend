@@ -17,10 +17,11 @@ import com.billing.calculator.demo.model.Product;
 import com.billing.calculator.demo.request.BillingRequest;
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = "https://sernteklifal.vercel.app")
 public class CalculateController {
 
-	@PostMapping("/api/calculateBilling")
+	@PostMapping("/calculateBilling")
 	public ResponseEntity<Billing> calculateBilling(@RequestBody BillingRequest request) throws IOException {
 		try{
 			Billing billing = new Billing();

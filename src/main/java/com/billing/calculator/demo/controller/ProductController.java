@@ -21,10 +21,11 @@ import java.util.Iterator;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = "https://sernteklifal.vercel.app")
 public class ProductController {
 	
-	@PostMapping("/api/getProduct")
+	@PostMapping("/getProduct")
 	public ResponseEntity<Product> getProduct(@RequestParam MultipartFile file, @RequestParam String productCode, @RequestParam String customerType) throws IOException {
 		try (InputStream inputStream = file.getInputStream()) {
 			Workbook workbook = new XSSFWorkbook(inputStream);
@@ -37,7 +38,7 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping("/api/searchProduct")
+	@PostMapping("/searchProduct")
 	public ResponseEntity<List<Product>> searchProduct(@RequestParam MultipartFile file, @RequestParam String filteredProductName, @RequestParam String customerType) throws IOException {
 		try (InputStream inputStream = file.getInputStream()) {
 			Workbook workbook = new XSSFWorkbook(inputStream);
