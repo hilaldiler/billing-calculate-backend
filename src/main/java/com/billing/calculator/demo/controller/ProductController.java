@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://sernteklifal.vercel.app")
+@CrossOrigin(origins = "*")
 public class ProductController {
 	
 	@PostMapping("/getProduct")

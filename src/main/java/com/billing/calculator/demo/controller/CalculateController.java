@@ -18,7 +18,7 @@ import com.billing.calculator.demo.request.BillingRequest;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://sernteklifal.vercel.app")
+@CrossOrigin(origins = "*")
 public class CalculateController {
 
 	@PostMapping("/calculateBilling")
