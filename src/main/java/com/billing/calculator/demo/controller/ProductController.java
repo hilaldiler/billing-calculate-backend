@@ -95,8 +95,8 @@ public class ProductController {
 				Cell cell = row.getCell(0);
 
 				if (cell != null) {
-					String contained = sheet.getRow(cell.getRowIndex()).getCell(productNameIndex).getStringCellValue();
-					if ((contained.toLowerCase().contains(productName.toLowerCase())) || (contained.toUpperCase().contains(productName.toUpperCase()))) {
+					String contained = sheet.getRow(cell.getRowIndex()).getCell(productNameIndex).getStringCellValue().trim();
+					if ((contained.toLowerCase().contains(productName.trim().toLowerCase())) || (contained.toUpperCase().contains(productName.trim().toUpperCase()))) {
 						int codeIndex = findProductCodeIndex(sheet, cell.getStringCellValue());
 						Double unitPriceVal = sheet.getRow(codeIndex).getCell(customerTypeIndex).getNumericCellValue();
 						productList.add(
