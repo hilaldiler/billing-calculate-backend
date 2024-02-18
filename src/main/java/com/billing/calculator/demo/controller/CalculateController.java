@@ -37,6 +37,7 @@ public class CalculateController {
 				Integer count = item.getProductCount();
 				Double unitPrice = item.getPrice();
 				Double itemTotalPrice = formatDoubleValue(unitPrice*count);
+				item.setTotalPriceOfProduct(formatDoubleValue(itemTotalPrice));
 				totalPrice = formatDoubleValue(totalPrice + itemTotalPrice);
 			}
 			if(!"".equals(taxRate)) {
