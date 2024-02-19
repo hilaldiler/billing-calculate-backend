@@ -19,6 +19,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping("/api")
@@ -96,7 +97,7 @@ public class ProductController {
 
 				if (cell != null) {
 					String contained = sheet.getRow(cell.getRowIndex()).getCell(productNameIndex).getStringCellValue();
-					if ((contained.toLowerCase()).contains(productName.toLowerCase())) {
+					if ((contained.trim().toLowerCase(new Locale("tr", "TR"))).contains(productName.trim().toLowerCase(new Locale("tr", "TR")))) {
 						int codeIndex = findProductCodeIndex(sheet, cell.getStringCellValue());
 						Double unitPriceVal = sheet.getRow(codeIndex).getCell(customerTypeIndex).getNumericCellValue();
 						productList.add(
