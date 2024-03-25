@@ -67,7 +67,7 @@ public class ProductController {
 	private int findProductCodeIndex(Sheet sheet, String productCode) {
 		for (Row row : sheet) {
 			for (Cell cell : row) {
-				if (cell.getCellType() == CellType.STRING && cell.getStringCellValue().equals(productCode)) {
+				if (cell.getCellType() == CellType.STRING && cell.getStringCellValue().trim().equals(productCode)) {
 					return cell.getRowIndex();
 				}
 			}
