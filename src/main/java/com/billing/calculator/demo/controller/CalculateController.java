@@ -36,11 +36,7 @@ public class CalculateController {
 			for(Product item : items) {
 				Integer count = item.getProductCount();
 				String unitPriceStr = item.getPrice();
-				System.out.println(unitPriceStr);
-				String replaced = unitPriceStr.replace(".","");
-				replaced = replaced.replace(",","."); 
-				System.out.println(replaced);
-				Double unitPrice = Double.parseDouble(replaced);
+				Double unitPrice = Double.parseDouble(unitPriceStr);
 				Double itemTotalPrice = formatDoubleValue(unitPrice*count);
 				item.setTotalPriceOfProduct(formatDoubleValue(itemTotalPrice));
 				totalPrice = formatDoubleValue(totalPrice + itemTotalPrice);
