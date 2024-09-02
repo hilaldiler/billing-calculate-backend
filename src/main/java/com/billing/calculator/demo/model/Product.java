@@ -18,10 +18,10 @@ public class Product implements Serializable{
 	private String productCode;
 	private String productName;
 	private Integer productCount;
-	private Double price;
+	private String price;
 	private Double totalPriceOfProduct;
 	
-	public Product(String productCode, String productName, Double price) {
+	public Product(String productCode, String productName, String price) {
 		this.productCode = productCode;
 		this.productName = productName;
 		this.price = price;

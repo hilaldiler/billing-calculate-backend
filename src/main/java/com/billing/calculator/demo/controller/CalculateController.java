@@ -35,7 +35,12 @@ public class CalculateController {
 			String discRate = request.getDiscRate();
 			for(Product item : items) {
 				Integer count = item.getProductCount();
-				Double unitPrice = item.getPrice();
+				String unitPriceStr = item.getPrice();
+				System.out.println(unitPriceStr);
+				String replaced = unitPriceStr.replace(".","");
+				replaced = replaced.replace(",","."); 
+				System.out.println(replaced);
+				Double unitPrice = Double.parseDouble(replaced);
 				Double itemTotalPrice = formatDoubleValue(unitPrice*count);
 				item.setTotalPriceOfProduct(formatDoubleValue(itemTotalPrice));
 				totalPrice = formatDoubleValue(totalPrice + itemTotalPrice);
