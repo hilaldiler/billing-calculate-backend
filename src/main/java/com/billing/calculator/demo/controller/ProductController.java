@@ -81,7 +81,7 @@ public class ProductController {
 
 		String productName = sheet.getRow(codeIndex).getCell(productNameIndex).getStringCellValue();
 		Double price = findIntersectionUnitPriceCellValue(sheet, productCode, customerType);
-		return new Product(productCode, productName, price);
+		return new Product(productCode, productName, price.toString());
 	}
 	
 	private List<Product> findSearchedByProductNameValue(Sheet sheet, String productName, String customerType) {
@@ -101,7 +101,7 @@ public class ProductController {
 						int codeIndex = findProductCodeIndex(sheet, cell.getStringCellValue());
 						Double unitPriceVal = sheet.getRow(codeIndex).getCell(customerTypeIndex).getNumericCellValue();
 						productList.add(
-								new Product(cell.getStringCellValue(), contained, formatDoubleValue(unitPriceVal)));
+								new Product(cell.getStringCellValue(), contained, formatDoubleValue(unitPriceVal).toString()));
 					}
 
 				}
